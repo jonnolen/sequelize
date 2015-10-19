@@ -1,3 +1,16 @@
+# 3.12.1
+- [FIXED] Mark postgres connection as invalid if the connection is reset [#4661](https://github.com/sequelize/sequelize/pull/4661)
+- [FIXED] Remove usage of "limit" in cases where it's unnecessary, which fixes some of the cases mentioned in [#4404] (https://github.com/sequelize/sequelize/issues/4404)
+- [SECURITY] Security concern with `$model.field$`, refactored to now require `$col: 'model.field'`
+
+# 3.12.0
+- [ADDED] Preliminary support for `include.on`.
+- [FIXED] Partial rollback of datatype validations by hiding it behind the `typeValidation` flag.
+- [FIXED] Don't try to select the primary key for models without primary key [#4607](https://github.com/sequelize/sequelize/issues/4607)
+- [FIXED] Apply `attributes` when including a scoped model. [#4625](https://github.com/sequelize/sequelize/issues/4625)
+- [FIXED] Use bits instead of strings for mssql booleans. [#4621](https://github.com/sequelize/sequelize/pull/4621)
+- [FIXED] BulkCreate validation fails for properties with `field` [#3787](https://github.com/sequelize/sequelize/issues/3787)
+
 # 3.11.0
 - [INTERNALS] Updated dependencies [#4594](https://github.com/sequelize/sequelize/pull/4594)
     + bluebird@2.10.1
